@@ -2,12 +2,12 @@
 // the node app starts
 
 // init project
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 
 // enable CORS (https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
 // so that API is remotely testable by FCC 
-var cors = require('cors');
+const cors = require('cors');
 app.use(cors({optionSuccessStatus: 200}));  // some legacy browsers choke on 204
 
 // to serve the static CSS file from the public folder by using the 
@@ -28,9 +28,9 @@ app.get("/api/hello", function (req, res) {
 
 // requested API endpoint from user stories--get the IP address, preferred languages, and system infos from the header
 app.get("/api/whoami", function(req, res) {
-  const myIP = req.header("X-Forwarded-For").split(',')[0];  // X-Forwarded-For method gets three IP addresses--client, proxy1, proxy 2
-  const myLanguage = req.header('Accept-Language');
-  const mySystem = req.header('User-Agent');
+  let myIP = req.header("X-Forwarded-For").split(',')[0];  // X-Forwarded-For method gets three IP addresses--client, proxy1, proxy 2
+  let myLanguage = req.header('Accept-Language');
+  let mySystem = req.header('User-Agent');
   res.json({
     ipaddress: myIP,
     language: myLanguage,
@@ -39,6 +39,6 @@ app.get("/api/whoami", function(req, res) {
 });
 
 // listen for requests :)
-var listener = app.listen(process.env.PORT, function () {
+const listener = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
 });
