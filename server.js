@@ -16,18 +16,18 @@ app.use(express.static('public'));
 
 // routing--how the app responds to a client request to a particular endpoint
 // when the route is matched, the handler function is executed--responds with the index.html file
-app.get("/", function (req, res) {
+app.get("/", (req, res) => {
   res.sendFile(__dirname + '/views/index.html');
 });
 
 
 // first test API endpoint... 
-app.get("/api/hello", function (req, res) {
+app.get("/api/hello", (req, res) => {
   res.json({greeting: 'hello API'});
 });
 
 // requested API endpoint from user stories--get the IP address, preferred languages, and system infos from the header
-app.get("/api/whoami", function(req, res) {
+app.get("/api/whoami", (req, res) => {
   let myIP = req.header("X-Forwarded-For").split(',')[0];  // X-Forwarded-For method gets three IP addresses--client, proxy1, proxy 2
   let myLanguage = req.header('Accept-Language');
   let mySystem = req.header('User-Agent');
@@ -39,6 +39,6 @@ app.get("/api/whoami", function(req, res) {
 });
 
 // listen for requests :)
-const listener = app.listen(process.env.PORT, function () {
+const listener = app.listen(process.env.PORT, () => {
   console.log('Your app is listening on port ' + listener.address().port);
 });
