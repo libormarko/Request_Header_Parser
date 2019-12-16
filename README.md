@@ -1,6 +1,6 @@
 # API Project: Request Header Parser Microservice
 
-A MERN full-stack JavaScript web development project. I wrote a blog post about the project, where you can read about programming concepts I used and about app's features and functionality. You can find it on my [medium profile](https://medium.com/@marko.libor/request-header-parser-microservice-ac6386cd0585).
+A full-stack JavaScript web development project. I wrote a blog post about the project, where you can read about programming concepts I used and about app's features and functionality. You can find it on my [medium profile](https://medium.com/@marko.libor/request-header-parser-microservice-ac6386cd0585).
 
 ## Technologies used
 * Node.JS
