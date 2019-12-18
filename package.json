@@ -1,7 +1,7 @@
 {
-  "name": "request_header",
+  "name": "request_header_parser",
   "version": "0.0.1",
-  "description": "API project for freeCodeCamp",
+  "description": "API project",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://hyperdev.com/#!/project/welcome-project"
+    "url": ""
   },
   "keywords": [
     "node",
